@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Rones Júnior" />
+    <meta name="keywords" content="Sprint 7 Javascript responsivo" />
+    <meta
+      name="description"
+      content="Página dedicada a aprendizado em desenvolvimento web HTML, CSS e Javascript"
+    />
+    <link rel="stylesheet" href="./pages/index.css" />
+    <link rel="icon" href="./favicon.ico" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>EUA Afora</title>
+  </head>
+  <body class="page">
+    <div class="page__content">
+      <header class="header">
+        <img
+          class="header__logo"
+          src="./images/header.png"
+          alt="imagem Around"
+        />
+      </header>
+      <main class="main">
+        <section class="profile">
+          <img
+            class="profile__avatar"
+            src="./images/jaques_costeau.jpg"
+            alt="jaques costeau"
+          />
+          <div class="profile__info">
+            <p class="profile__title">Jacques Cousteau</p>
+            <p class="profile__description">Explorador</p>
+            <div class="profile__edit-button">
+              <div class="profile__square">
+                <img
+                  class="profile__image-button"
+                  src="./images/edit_button.png"
+                  alt="botão editar"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="profile__retangule">
+            <div class="profile__add-button">
+              <img
+                class="profile__add-image"
+                src="./images/add_button.png"
+                alt="botão editar"
+              />
+            </div>
+          </div>
+        </section>
+
+        <div class="elements-container"></div>
+      </main>
+
+      <footer class="footer">
+        <p class="footer__copyright">&copy; 2025. Around The U.S.</p>
+      </footer>
+    </div>
+
+    <!-- Bloco Pop-up para editar perfil -->
+    <div id="popup" class="popup">
+      <div class="popup__container">
+        <button type="button" class="popup__fechar-botao" data-fechar></button>
+        <h2 class="popup__titulo">Editar perfil</h2>
+        <form id="popup__form" class="popup__form" novalidate>
+          <input
+            class="popup__input"
+            type="text"
+            id="nome"
+            name="nome"
+            placeholder="Nome"
+            required
+            minlength="2"
+            maxlength="40"
+          />
+          <span class="nome-error"></span>
+
+          <input
+            class="popup__input"
+            type="text"
+            id="sobre"
+            name="sobre"
+            placeholder="Sobre mim"
+            required
+            minlength="2"
+            maxlength="200"
+          />
+          <span class="sobre-error"></span>
+
+          <button
+            type="submit"
+            id="popup__button"
+            class="popup__button popup__button_disabled"
+            disabled
+          >
+            Salvar
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Bloco Pop-up para adicionar card -->
+    <div id="popup-add-card" class="popup-add-card">
+      <div class="popup-add-card__container">
+        <button
+          type="button"
+          class="popup-add-card__fechar-botao"
+          data-fechar
+        ></button>
+        <h2 class="popup-add-card__titulo">Novo local</h2>
+        <form id="popup-add-card__form" class="popup-add-card__form" novalidate>
+          <input
+            class="popup-add-card__entrada"
+            type="text"
+            id="titulo"
+            name="titulo"
+            placeholder="Título"
+            required
+            minlength="2"
+            maxlength="30"
+          />
+          <span class="titulo-error"></span>
+
+          <input
+            class="popup-add-card__entrada"
+            type="url"
+            id="link"
+            name="link"
+            placeholder="Link de imagem"
+            required
+          />
+          <span class="link-error"></span>
+
+          <button
+            type="submit"
+            id="popup-add-card__criar-botao"
+            class="popup-add-card__criar-botao popup-add-card__criar-botao_inativo"
+            disabled
+          >
+            Salvar
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Bloco Pop-up de imagem-->
+    <div id="popup_img" class="popup-img">
+      <div class="popup-img__content_content_image">
+        <button
+          id="popup-img__close"
+          class="popup-img__close"
+          type="button"
+          aria-label="Fechar"
+          data-fechar
+        ></button>
+        <img class="popup-img__image" src="" alt="" />
+        <p class="popup-img__caption"></p>
+      </div>
+    </div>
+
+    <template class="elements">
+      <div class="element">
+        <button
+          class="element__delete-button"
+          type="button"
+          aria-label="Excluir cartão"
+        >
+          <img
+            src="./images/lixeira.png"
+            alt="botão lixeira"
+            class="element__lixeira-icon"
+          />
+        </button>
+        <img class="element__image" src=" " alt="Imagem do card" />
+        <div class="element__description">
+          <h2 class="element__title"></h2>
+          <button
+            class="element__like-button"
+            type="button"
+            aria-label="Curtir"
+          >
+            <img
+              src="./images/like_button.svg"
+              alt="botão like"
+              class="element__like-icon"
+            />
+          </button>
+        </div>
+      </div>
+    </template>
+
+    <script type="module" src="./scripts/index.js"></script>
+  </body>
+</html>
